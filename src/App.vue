@@ -1,7 +1,6 @@
 
 <template>
   <div id="app">
-    ELIXIR
     <vue-particles
         color="#79CEF6"
         :particleOpacity="0.7"
@@ -20,12 +19,17 @@
         clickMode="push"
       >
       </vue-particles>
+
+<hello-world></hello-world>
+
+
+
   </div>
 </template>
 <script>
  /* eslint-disable */ 
 import particleJs from "../node_modules/particlesjs/dist/particles.min.js"
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/LoginPage.vue'
 
 export default {
   name: 'app',
@@ -36,21 +40,40 @@ export default {
 </script>
 
 <style>
+input,
 #app {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: white;
 }
+
+
 .particles-js-canvas-el{
 position:absolute;  
 display:block;
 top:0;  
 left:0;  
-z-index:0;
+z-index:-1;
 background-image:url('./assets/aurora.jpg');
 background-size: cover;
+}
+input{
+  background: none;
+  box-shadow: none;
+  border:1px solid white;
+  height:2.5rem;
+  padding:0 1rem;
+  font-size:1rem;
+  text-align: left;
+}
+::-webkit-input-placeholder,
+::-moz-placeholder,
+::-ms-input-placeholder,
+::-moz-placeholder{
+  color:rgba(255,255,255,0.8);
+}
+input + input{
+  margin-top: 2rem;
 }
 </style>
